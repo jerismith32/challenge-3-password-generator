@@ -28,11 +28,14 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-//Start Function Generate Password
-function generatePassword()
-
+//Start Function Generate Password Length
+function generatePasswordLength() {
     //User Input Needed for Password Length
     passwordLength = window.prompt("How many characters do you want your password to be? Please choose between 8 and 128 characters");
     console.log("User Input Password Length" + passwordLength);
 
-    
+    if (passwordLength === "" || passwordLength === null || passwordLength < 8 || passwordLength > 128) {
+      window.alert("You need to provide a password character length between 8 and 128! Please try again.");
+      return generatePasswordLength ();
+    }
+};
