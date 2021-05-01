@@ -28,7 +28,7 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-//Start Function Generate Password Length
+//Start Function to Generate Password Length
 function generatePasswordLength() {
     //User Input Needed for Password Length
     passwordLength = window.prompt("How many characters do you want your password to be? Please choose between 8 and 128 characters");
@@ -39,3 +39,25 @@ function generatePasswordLength() {
       return generatePasswordLength ();
     }
 };
+
+//Start Function to Generate UpperCase and/or LowerCase
+function generateLowerCase () {
+  passwordLowerCase = window.prompt ("Will your password contain lower case letters? Please choose Y or N");
+  console.log("Lower Case Preferance" + passwordLowerCase);
+
+  if (passwordLowerCase === "" || passwordLowerCase === null) {
+    window.alert("You need to provide a choice indicating if you want a Lower Case letter in your password.");
+    return generateLowerCase (); 
+  }
+
+};
+
+function generateUpperCase () {
+  passwordUpperCase = window.prompt ("Will your password contain upper case letters? Please choose Y or N");
+  console.log("Upper Case Preferance" + passwordUpperCase);
+
+  if (passwordUpperCase === "" || passwordUpperCase === null) {
+    window.alert("You need to provide a choice indicating if you want a Upper Case letter in your password.");
+    return generateUpperCase (); 
+  }
+}
