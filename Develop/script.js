@@ -40,9 +40,20 @@ function generatePasswordLength() {
     }
 
     else {
-      return generateLowerCase ();
+      passwordLowerCase = window.confirm ("Will your password contain lower case letters? Choose 'OK' for yes and 'Cancel for no.");
+      console.log ("Lower Case Preferance " + passwordLowerCase);
+      passwordUpperCase = window.confirm ("Will your password contain upper case letters? Choose 'OK' for yes and 'Cancel for no.");
+      console.log ("Upper Case Preferance " + passwordUpperCase);
+      passwordNumbers = window.confirm ("Will your password contain numbers Choose 'OK' for yes and 'Cancel for no.");
+      console.log ("Number Preferance " + passwordNumbers);
+      passwordSpecials = window.confirm ("Will your password contain special characters? Choose 'OK' for yes and 'Cancel for no.");
+      console.log ("Special Character Preferance " + passwordSpecials);
     }
 };
+
+
+
+/*
 
 //Start Functions to Generate UpperCase and/or LowerCase
 function generateLowerCase () {
@@ -117,4 +128,4 @@ function generateSpecials () {
       window.alert("You need to provide a choice indicating if you want special characters in your password.");
       return generateSpecials ();
   }
-};
+}; */
