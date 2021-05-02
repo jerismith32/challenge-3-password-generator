@@ -5,7 +5,7 @@ var generateBtn = document.querySelector("#generate");
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","W","X","Y","Z"];
 var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-//var specialCharacters = ["!", """, "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\", "]", "^", "_", "`", "{", "|", "}", "~"];
+var specials = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "^", "_", "`", "{", "|", "}", "~"];
 
 //Variables for information needed from the User
 var passwordLength;
@@ -15,6 +15,7 @@ var passwordNumbers;
 var passwordSpecials;
 var passwordInformation;
 
+/*
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -26,7 +27,7 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
+*/
 
 //Start Function to Generate User Input for desired password
 function generatePasswordInformation() {
@@ -34,7 +35,7 @@ function generatePasswordInformation() {
     passwordLength = window.prompt("How many characters do you want your password to be? Please choose between 8 and 128 characters");
     console.log("User Input Password Length " + passwordLength);
 
-    if (passwordLength === "" || passwordLength === null || passwordLength < 8 || passwordLength > 128) {
+    if (passwordLength === null || passwordLength < 8 || passwordLength > 128) {
       window.alert("You need to provide a password character length between 8 and 128! Please try again.");
       return generatePasswordLength ();
     }
@@ -59,9 +60,29 @@ function generatePasswordInformation() {
       passwordInformation= window.alert ("You must select at least one of the following criteria to be included in your password: lowercase letter, uppercase letter, number, or special character");
       return generatePasswordInformation ();
     }
-    
+
+    //This will allow if the user wants all four options (lowercase letters, uppercase letters, numbers, and special characters) in their password
+    else if (passwordLowerCase === true && passwordUpperCase === true && passwordNumbers === true && passwordSpecials === true ) {
+      // This allows us to pull from the arrays defined at the beginning of the code and list them all together in the console and under one variable name 'passwordInformation'
+      passwordInformation = lowerCase.concat(upperCase, numbers, specials);
+      console.log (passwordInformation);
+    }
+
 };
 
+
+
+  // Write password to the #password input
+  function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+  }
+
+  // Add event listener to generate button
+  generateBtn.addEventListener("click", writePassword);
 
 
 
