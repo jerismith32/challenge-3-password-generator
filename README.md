@@ -29,7 +29,7 @@ THEN the password is either displayed in an alert or written to the page
 ```
 
 ## Website
-[Password Generator]()
+[Password Generator](https://jerismith32.github.io/challenge-3-password-generator/)
 
 ## Website Screenshots
 ![Initial Page Loading](Assets/initial_loaded_page.png)
