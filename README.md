@@ -29,16 +29,19 @@ THEN the password is either displayed in an alert or written to the page
 ```
 
 ## Website
-[Jeri Smith Professional Portfolio](https://jerismith32.github.io/challenge-2-advanced-css-professional-portfolio/)
+[Password Generator]()
 
 ## Website Screenshots
-![Jeri Smith Portfolio Screenshot]
+![Initial Page Loading](Assets/initial_loaded_page.png)
+![Example of a Password Generated](Assets/Example.png)
+
 
 ## Contributions
 Contributions made by Jeri Smith
 
 ## References
-https://www.w3schools.com/jsref/jsref_push.asp
+[W3 Schools JavaScript Push](https://www.w3schools.com/jsref/jsref_push.asp)
+[W3 Schools Array Join](https://www.w3schools.com/jsref/jsref_join.asp)
 
 - - -
 © 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
