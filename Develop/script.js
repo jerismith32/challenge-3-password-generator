@@ -69,7 +69,82 @@ function generatePassword() {
       console.log (passwordInformation);
     }
 
+    //This will allow if the user wants just 1 option (lowercase, uppercase, numbers, and special characters) in their password
+    else if (passwordLowerCase === true && passwordUpperCase === false && passwordNumbers === false && passwordSpecials === false ) {
+      passwordInformation = lowerCase;
+      console.log (passwordInformation);
+    }
 
+    else if (passwordLowerCase === false && passwordUpperCase === true && passwordNumbers === false && passwordSpecials === false ) {
+      passwordInformation = upperCase;
+      console.log (passwordInformation);
+    }
+
+    else if (passwordLowerCase === false && passwordUpperCase === false && passwordNumbers === true && passwordSpecials === false ) {
+      passwordInformation = numbers;
+      console.log (passwordInformation);
+    }
+
+    else if (passwordLowerCase === false && passwordUpperCase === false && passwordNumbers === false && passwordSpecials === true ) {
+      passwordInformation = specials;
+      console.log (passwordInformation);
+    }
+
+    //This will allow if the user wants 2 of the options in their password
+    else if (passwordLowerCase === true && passwordUpperCase === true && passwordNumbers === false && passwordSpecials === false ) {
+      passwordInformation = lowerCase.concat(upperCase);
+      console.log (passwordInformation);
+    }
+
+    else if (passwordLowerCase === true && passwordUpperCase === false && passwordNumbers === true && passwordSpecials === false ) {
+      passwordInformation = lowerCase.concat(numbers);
+      console.log (passwordInformation);
+    }
+
+    else if (passwordLowerCase === true && passwordUpperCase === false && passwordNumbers === false && passwordSpecials === true ) {
+      passwordInformation = lowerCase.concat(specials);
+      console.log (passwordInformation);
+    }
+
+    else if (passwordLowerCase === false && passwordUpperCase === true && passwordNumbers === true && passwordSpecials === false ) {
+      passwordInformation = upperCase.concat(numbers);
+      console.log (passwordInformation);
+    }
+
+    else if (passwordLowerCase === false && passwordUpperCase === true && passwordNumbers === false && passwordSpecials === true ) {
+      passwordInformation = upperCase.concat(specials);
+      console.log (passwordInformation);
+    }
+
+    else if (passwordLowerCase === false && passwordUpperCase === false && passwordNumbers === true && passwordSpecials === true ) {
+      passwordInformation = numbers.concat(specials);
+      console.log (passwordInformation);
+    }
+
+    //This will allow if the user wants 3 of the options in their password
+    else if (passwordLowerCase === true && passwordUpperCase === true && passwordNumbers === true && passwordSpecials === false ) {
+      // This allows us to pull from the arrays defined at the beginning of the code and list them all together in the console and under one variable name 'passwordInformation'
+      passwordInformation = lowerCase.concat(upperCase, numbers);
+      console.log (passwordInformation);
+    }
+
+    else if (passwordLowerCase === true && passwordUpperCase === true && passwordNumbers === false && passwordSpecials === true ) {
+      // This allows us to pull from the arrays defined at the beginning of the code and list them all together in the console and under one variable name 'passwordInformation'
+      passwordInformation = lowerCase.concat(upperCase, specials);
+      console.log (passwordInformation);
+    }
+
+    else if (passwordLowerCase === true && passwordUpperCase === false && passwordNumbers === true && passwordSpecials === true ) {
+      // This allows us to pull from the arrays defined at the beginning of the code and list them all together in the console and under one variable name 'passwordInformation'
+      passwordInformation = lowerCase.concat(numbers, specials);
+      console.log (passwordInformation);
+    }
+
+    else if (passwordLowerCase === false && passwordUpperCase === true && passwordNumbers === true && passwordSpecials === true ) {
+      // This allows us to pull from the arrays defined at the beginning of the code and list them all together in the console and under one variable name 'passwordInformation'
+      passwordInformation = upperCase.concat(numbers, specials);
+      console.log (passwordInformation);
+    }
   };
 
   //Begin write Password Function
@@ -77,13 +152,16 @@ function generatePassword() {
     //this is a placeholder password in order to complete the for loop that will then be consolodated into the password
     var placeholderPassword = [];
 
+    //Begin for loop, including i=0, i < passwordLength (from the user input) and i++
     for (var i=0; i < passwordLength; i++) {
+      //Math random and math floor are used here to give us an integer times the password Length
       var passwordPossibilities = passwordInformation[Math.floor(Math.random() * passwordInformation.length)];
       placeholderPassword.push(passwordPossibilities);
       console.log(placeholderPassword);
     }
 
-  var password = placeholderPassword.join("");
+    // Join allows us to connect or show equality with the password variable and passwordPlaceholder we have been using in the writePassword Function
+    var password = placeholderPassword.join("");
     console.log(password);
     window.alert(password); 
   }
@@ -101,11 +179,6 @@ function generatePassword() {
 
   // Add event listener to generate button
   generateBtn.addEventListener("click", writePassword);
-
-
-
-
-
 
 //Start Functions to Generate UpperCase and/or LowerCase
 function generateLowerCase () {
